@@ -5,7 +5,7 @@ meta:
   desc:
     'A translator to estimate the solvent composition that would give similar eluotropic strength of the original solvent system'
 intro:
-  title: 'Eluotropic Strength Translator'
+  title: 'Eluent Strength Translator'
   desc:
     'The following calculator helps you to predict a solvent system composition that would give similar eluotropic (solvent) strength. Please choose your origin and desired solvent systems below'
 primaryCTA:
@@ -23,8 +23,8 @@ primaryCTA:
 
   <div class="flex flex-wrap mr-2 mb-8">
     <div class="my-4 w-5/6 md:w-1/3 flex flex-row">
-      <label class="mt-4 mr-2 text-right">Solvent A:</label>
-      <select class="form-select mt-1 w-2/3"
+      <label class="mt-4 mr-2 text-right" for="solA_1">Solvent A:</label>
+      <select id="solA_1" class="form-select mt-1 w-2/3"
         @change="solA_1.solvent = lookup($event.target.value); translate()">
         <template x-for="solvent in solvents" :key="solvent.name">
           <option x-bind:value="solvent.name" x-text="solvent.name"
@@ -34,15 +34,16 @@ primaryCTA:
     </div>
     <div class="w-1/6 md:w-1/3 my-4 text-center py-3" x-text="solA_1.solvent.eluoValue"></div>
     <div class="mb-4 w-full md:w-1/3 flex flex-row">
-      <label class="mt-4 mx-3 text-right">Percentage:</label>
-      <input type="number" min="0" max="100" class="form-input mt-1 w-3/4 h-12" placeholder="percentage"
-        x-model="solA_1.percentage" x-on:change="solB_1.percentage = (100 - solA_1.percentage); translate()">
-      <span class="mt-4 ml-3">%</span>
+      <label class="mt-4 mx-3 text-right">Percentage:
+        <input type="number" min="0" max="100" class="form-input mt-1 w-3/4 h-12" placeholder="percentage"
+          x-model="solA_1.percentage" x-on:change="solB_1.percentage = (100 - solA_1.percentage); translate()">
+        <span class="mt-4 ml-3">%</span>
+      </label>
     </div>
 
     <div class="my-4 w-5/6 md:w-1/3 flex flex-row">
-      <label class="mt-4 mr-2 text-right">Solvent B:</label>
-      <select class="form-select mt-1 w-2/3"
+      <label class="mt-4 mr-2 text-right" for="solB_1" >Solvent B:</label>
+      <select id="solB_1" class="form-select mt-1 w-2/3"
         @change="solB_1.solvent = lookup($event.target.value); translate()">
         <template x-for="solvent in solvents" :key="solvent.name">
           <option x-bind:value="solvent.name" x-text="solvent.name"
@@ -52,10 +53,11 @@ primaryCTA:
     </div>
     <div class="w-1/6 md:w-1/3 my-4 text-center py-3" x-text="solB_1.solvent.eluoValue"></div>
     <div class="mb-4 w-full md:w-1/3 flex flex-row">
-      <label class="mt-4 mx-3 text-right">Percentage:</label>
-      <input type="number" min="0" max="100" class="form-input mt-1 w-3/4 h-12" placeholder="percentage"
+      <label class="mt-4 mx-3 text-right">Percentage:
+        <input type="number" min="0" max="100" class="form-input mt-1 w-3/4 h-12" placeholder="percentage"
         x-model="solB_1.percentage" x-on:change="solA_1.percentage = (100 - solB_1.percentage); translate()">
-      <span class="mt-4 ml-3">%</span>
+        <span class="mt-4 ml-3">%</span>
+      </label>
     </div>
   </div>
 
@@ -115,8 +117,8 @@ primaryCTA:
 
   <div class="flex flex-wrap mr-2 mb-8">
     <div class="my-4 w-5/6 md:w-1/3 flex flex-row">
-      <label class="mt-4 mr-2 text-right">Solvent A:</label>
-      <select class="form-select mt-1 w-2/3"
+      <label class="mt-4 mr-2 text-right" for="solA_2" >Solvent A:</label>
+      <select id="solA_2" class="form-select mt-1 w-2/3"
         @change="solA_2.solvent = lookup($event.target.value); translate()">
         <template x-for="solvent in solvents" :key="solvent.name">
           <option x-bind:value="solvent.name" x-text="solvent.name"
@@ -126,14 +128,14 @@ primaryCTA:
     </div>
     <div class="w-1/6 md:w-1/3 mt-4 text-center py-3" x-text="solA_2.solvent.eluoValue"></div>
     <div class="mb-4 w-full md:w-1/3 flex flex-row py-3">
-      <label class="mt-4 mx-3 text-right">Percentage:</label>
+      <div class="mt-4 mx-3 text-right">Percentage:</div>
       <div class="mt-4 inline-block text-red-700 mx-3 font-bold animate-bounce" x-text="solA_2.percentage"></div><span
         class="mt-4">%</span>
     </div>
 
     <div class="my-4 w-5/6 md:w-1/3 flex flex-row">
-      <label class="mt-4 mr-2 text-right">Solvent B:</label>
-      <select class="form-select mt-1 w-2/3"
+      <label class="mt-4 mr-2 text-right" for="solB_2">Solvent B:</label>
+      <select id="solB_2" class="form-select mt-1 w-2/3"
         @change="solB_2.solvent = lookup($event.target.value); translate()">
         <template x-for="solvent in solvents" :key="solvent.name">
           <option x-bind:value="solvent.name" x-text="solvent.name"
@@ -143,7 +145,7 @@ primaryCTA:
     </div>
     <div class="w-1/6 md:w-1/3 mt-4 text-center py-3" x-text="solB_2.solvent.eluoValue"></div>
     <div class="mb-4 w-full md:w-1/3 flex flex-row py-3">
-      <label class="mt-4 mx-3 text-right">Percentage:</label>
+      <div class="mt-4 mx-3 text-right">Percentage:</div>
       <div class="mt-4 inline-block text-red-700 mx-3 font-bold animate-bounce" x-text="solB_2.percentage"></div><span
         class="mt-4">%</span>
     </div>
@@ -204,7 +206,7 @@ primaryCTA:
         📚 More references
       </span>
     </h2>
-    <ul class="list-decimal">
+    <ul class="list-decimal px-10">
       <li class="mt-4 text-lg text-left leading-6 text-gray-200">
         A convenient guide to help select replacement solvents for dichloromethane in chromatography <a class="underline"
           href="https://doi.org/10.1039/C2GC36064K"
@@ -217,13 +219,13 @@ primaryCTA:
       </li>
       <li class="mt-4 text-lg text-left leading-6 text-gray-200">
         Louisiana State University Macro server at The Polymer Analysis Laboratory (PAL) <a class="underline" href="https://macro.lsu.edu/howto/solvents.htm" rel="noopener"
-          target="_blank">Solvent's page</a> specifically:
+          target="_blank">Solvent's page</a>, specifically:
           <ul class="list-disc">
-            <li>
+            <li class="pt-2">
               <a class="underline" href="https://macro.lsu.edu/howto/solvents/Summary%20of%20Key%20Physical%20data%20for%20Baker%20Analyzed%20HPLC%20Solvents.htm" rel="noopener" target="_blank">
                 Summary of Key Physical data for Baker Analyzed HPLC Solvents</a>
             </li>
-            <li>
+            <li class="pt-2">
               <a class="underline"
                 href="https://macro.lsu.edu/howto/solvents/Solvent%20Group.htm"
                 rel="noopener" target="_blank">
