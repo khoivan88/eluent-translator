@@ -8,7 +8,7 @@
 {% assign current_url = site.url | append: page.url %}
 
 {% unless social_image %}
-  {% assign social_image = site.url | append: '/images/social-share.png' %}
+  {% assign social_image = site.url | append: '/images/eluent-translator-logo.png' %}
 {% endunless %}
 
 {% if meta.title %}
@@ -46,8 +46,9 @@
 
 <meta name="theme-color" content="#4a5568" />
 
-<link rel="apple-touch-icon" href="/images/icons/icon-192x192.png" />
-<link rel="icon" href="/images/icons/favicon.svg" type="image/svg+xml" />
+<link rel="apple-touch-icon" sizes="180x180" href="/images/icons/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/images/icons/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/images/icons/favicon-16x16.png">
 <link rel="manifest" href="/manifest.json" />
 
 <link rel="preload" href="https://rsms.me/inter/inter.css" as="style" />
@@ -61,3 +62,13 @@
 />
 
 <link rel="stylesheet" href="/styles/index.css?{{ hash }}" />
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script defer src="https://www.googletagmanager.com/gtag/js?id=G-GHD3LNCFN0"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-GHD3LNCFN0');
+</script>
