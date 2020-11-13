@@ -1,4 +1,4 @@
-import confetti from 'canvas-confetti';
+// import confetti from 'canvas-confetti';
 
 import 'alpinejs';
 import SmoothScroll from 'smooth-scroll';
