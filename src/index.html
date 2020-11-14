@@ -7,7 +7,7 @@ meta:
 intro:
   title: 'Eluent Strength Translator'
   desc:
-    'The following calculator helps you to predict a solvent system composition that would give similar eluotropic (solvent) strength. Please choose your origin and desired solvent systems below'
+    'The following calculator helps you to predict a solvent system composition that would give similar eluotropic strength for <b>neutral compounds</b> on <b>silica gels</b>. Please choose your origin and desired solvent systems below'
 primaryCTA:
   title: 'About'
   summary: >
@@ -19,10 +19,10 @@ primaryCTA:
 
 <div class="w-full max-w-6xl mx-auto mt-20" x-data="getSolvents()" x-init="init()">
   <h3 class="font-black uppercase mx-10">Current solvent system:</h3>
-  <div class="my-4 text-right md:text-center">Eluotropic strength in silica</div>
+  <div class="mt-2 md:my-4 text-right md:text-center">Eluotropic strength in silica</div>
 
-  <div class="flex flex-wrap mr-2 mb-8">
-    <div class="my-4 w-5/6 md:w-1/3 flex flex-row">
+  <div class="flex flex-wrap mr-2 md:mb-8">
+    <div class="my-1 md:my-4 w-5/6 md:w-1/3 flex flex-row">
       <label class="mt-4 mr-2 text-right" for="solA_1">Solvent A:</label>
       <select id="solA_1" class="form-select mt-1 w-2/3"
         @change="solA_1.solvent = lookup($event.target.value); translate()">
@@ -32,16 +32,16 @@ primaryCTA:
         </template>
       </select>
     </div>
-    <div class="w-1/6 md:w-1/3 my-4 text-center py-3" x-text="solA_1.solvent.eluoValue"></div>
-    <div class="mb-4 w-full md:w-1/3 flex flex-row">
-      <label class="mt-4 mx-3 text-right">Percentage:
-        <input type="number" min="0" max="100" class="form-input mt-1 w-3/4 h-12" placeholder="percentage"
+    <div class="w-1/6 md:w-1/3 text-center self-center" x-text="solA_1.solvent.eluoValue"></div>
+    <div class="mb-1 md:mb-4 w-full md:w-1/3 flex flex-row">
+      <label class="md:mt-4 mx-3 text-right">Percentage:
+        <input type="number" min="0" max="100" class="form-input w-auto"
           x-model="solA_1.percentage" x-on:change="solB_1.percentage = (100 - solA_1.percentage); translate()">
-        <span class="mt-4 ml-3">%</span>
+        %
       </label>
     </div>
 
-    <div class="my-4 w-5/6 md:w-1/3 flex flex-row">
+    <div class="my-1 md:my-4 w-5/6 md:w-1/3 flex flex-row">
       <label class="mt-4 mr-2 text-right" for="solB_1" >Solvent B:</label>
       <select id="solB_1" class="form-select mt-1 w-2/3"
         @change="solB_1.solvent = lookup($event.target.value); translate()">
@@ -51,18 +51,18 @@ primaryCTA:
         </template>
       </select>
     </div>
-    <div class="w-1/6 md:w-1/3 my-4 text-center py-3" x-text="solB_1.solvent.eluoValue"></div>
-    <div class="mb-4 w-full md:w-1/3 flex flex-row">
-      <label class="mt-4 mx-3 text-right">Percentage:
-        <input type="number" min="0" max="100" class="form-input mt-1 w-3/4 h-12" placeholder="percentage"
-        x-model="solB_1.percentage" x-on:change="solA_1.percentage = (100 - solB_1.percentage); translate()">
-        <span class="mt-4 ml-3">%</span>
+    <div class="w-1/6 md:w-1/3 text-center self-center" x-text="solB_1.solvent.eluoValue"></div>
+    <div class="mb-1 md:mb-4 w-full md:w-1/3 flex flex-row">
+      <label class="md:mt-4 mx-3 text-right">Percentage:
+        <input type="number" min="0" max="100" class="form-input w-auto"
+          x-model="solB_1.percentage" x-on:change="solA_1.percentage = (100 - solB_1.percentage); translate()">
+        %
       </label>
     </div>
   </div>
 
   <!-- Arrow -->
-  <div class="w-1/12 mx-auto mt-10 md:mt-20">
+  <div class="w-1/12 mx-auto mt-4 md:mt-16">
     <!-- Generator: Adobe Illustrator 19.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
     <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
       x="0px" y="0px" viewBox="0 0 512.003 512.003" style="enable-background:new 0 0 512.003 512.003;"
@@ -112,11 +112,11 @@ primaryCTA:
     </svg>
   </div>
 
-  <h3 class="font-black uppercase mt-10 md:mt-20 mx-10">Desired solvent system:</h3>
-  <div class="my-4 text-right md:text-center">Eluotropic strength in silica</div>
+  <h3 class="font-black uppercase mt-4 md:mt-20 mx-10">Desired solvent system:</h3>
+  <div class="mt-2 md:my-4 text-right md:text-center">Eluotropic strength in silica</div>
 
-  <div class="flex flex-wrap mr-2 mb-8">
-    <div class="my-4 w-5/6 md:w-1/3 flex flex-row">
+  <div class="flex flex-wrap mr-2 md:mb-8">
+    <div class="my-1 md:my-4 w-5/6 md:w-1/3 flex flex-row">
       <label class="mt-4 mr-2 text-right" for="solA_2" >Solvent A:</label>
       <select id="solA_2" class="form-select mt-1 w-2/3"
         @change="solA_2.solvent = lookup($event.target.value); translate()">
@@ -126,14 +126,14 @@ primaryCTA:
         </template>
       </select>
     </div>
-    <div class="w-1/6 md:w-1/3 mt-4 text-center py-3" x-text="solA_2.solvent.eluoValue"></div>
-    <div class="mb-4 w-full md:w-1/3 flex flex-row py-3">
-      <div class="mt-4 mx-3 text-right">Percentage:</div>
-      <div class="mt-4 inline-block text-red-700 mx-3 font-bold animate-bounce" x-text="solA_2.percentage"></div><span
-        class="mt-4">%</span>
+    <div class="w-1/6 md:w-1/3 text-center self-center" x-text="solA_2.solvent.eluoValue"></div>
+    <div class="md:mb-4 w-full md:w-1/3 flex flex-row py-3">
+      <div class="md:mt-4 mx-3 text-right">Percentage:</div>
+      <div class="md:mt-4 inline-block text-red-700 mx-3 font-bold animate-bounce" x-text="solA_2.percentage"></div>
+      <span class="md:mt-4">%</span>
     </div>
 
-    <div class="my-4 w-5/6 md:w-1/3 flex flex-row">
+    <div class="my-1 md:my-4 w-5/6 md:w-1/3 flex flex-row">
       <label class="mt-4 mr-2 text-right" for="solB_2">Solvent B:</label>
       <select id="solB_2" class="form-select mt-1 w-2/3"
         @change="solB_2.solvent = lookup($event.target.value); translate()">
@@ -142,6 +142,12 @@ primaryCTA:
             x-bind:selected="solvent.name === solB_2.solvent.name"></option>
         </template>
       </select>
+    </div>
+    <div class="w-1/6 md:w-1/3 text-center self-center" x-text="solB_2.solvent.eluoValue"></div>
+    <div class="md:mb-4 w-full md:w-1/3 flex flex-row py-3">
+      <div class="md:mt-4 mx-3 text-right">Percentage:</div>
+      <div class="md:mt-4 inline-block text-red-700 mx-3 font-bold animate-bounce" x-text="solB_2.percentage"></div>
+      <span class="md:mt-4">%</span>
     </div>
     <div class="w-1/6 md:w-1/3 mt-4 text-center py-3" x-text="solB_2.solvent.eluoValue"></div>
     <div class="mb-4 w-full md:w-1/3 flex flex-row py-3">
