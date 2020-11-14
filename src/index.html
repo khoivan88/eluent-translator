@@ -745,26 +745,31 @@ primaryCTA:
         </svg>
       </div>
     </div>
-    <form name="contactForm" method="POST" data-netlify="true">
+    <form name="contactForm" method="POST" enctype="multipart/form-data"
+      netlify-honeypot="bot-field" data-netlify="true">
+      <p class="hidden">
+        <label>Don’t fill this out if you're human: <input name="bot-field" /></label>
+      </p>
       <div>
         <span class="uppercase text-sm text-gray-600 font-bold">Name</span>
         <input class="w-full bg-gray-300 text-gray-900 mt-2 p-3 rounded-lg focus:outline-none focus:shadow-outline"
-          type="text" placeholder="Name" name="name" required >
+          type="text" placeholder="Name" name="name" required>
       </div>
       <div class="mt-8">
         <span class="uppercase text-sm text-gray-600 font-bold">Email</span>
         <input class="w-full bg-gray-300 text-gray-900 mt-2 p-3 rounded-lg focus:outline-none focus:shadow-outline"
-          type="text" name="email" required >
+          type="email" name="email" placeholder="Email" required>
       </div>
       <div class="mt-8">
         <span class="uppercase text-sm text-gray-600 font-bold">Message</span>
         <textarea
-          class="w-full h-32 bg-gray-300 text-gray-900 mt-2 p-3 rounded-lg focus:outline-none focus:shadow-outline" name="message" required></textarea>
+          class="w-full h-32 bg-gray-300 text-gray-900 mt-2 p-3 rounded-lg focus:outline-none focus:shadow-outline"
+          name="message" placeholder="Message" required></textarea>
       </div>
       <div class="mt-8">
         <span class="uppercase text-sm text-gray-600 font-bold">Attach file (optional)</span>
         <input class="w-full bg-gray-300 text-gray-900 mt-2 p-3 rounded-lg focus:outline-none focus:shadow-outline"
-          type="file">
+          type="file" name="file">
       </div>
       <div class="mt-8">
         <button type="submit"
