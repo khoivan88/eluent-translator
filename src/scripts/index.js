@@ -1,6 +1,9 @@
 import 'alpinejs';
 import SmoothScroll from 'smooth-scroll';
 
+// Initialize Smooth scroll
+var scroll = new SmoothScroll('a[href*="#"]');
+
 // Check that service workers are supported
 if ('serviceWorker' in navigator) {
   // use the window load event to keep the page load performant
@@ -12,6 +15,3 @@ if ('serviceWorker' in navigator) {
     }
   });
 }
-
-// Initialize Smooth scroll
-var scroll = new SmoothScroll('a[href*="#"]');
