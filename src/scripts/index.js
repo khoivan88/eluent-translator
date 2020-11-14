@@ -1,19 +1,6 @@
-// import confetti from 'canvas-confetti';
-
 import 'alpinejs';
 import SmoothScroll from 'smooth-scroll';
 
-  // Initialize Smooth scroll
-var scroll = new SmoothScroll('a[href*="#"]');
-
-// const canvas = document.getElementById('canvas');
-
-// if (canvas) {
-//   confetti.create(canvas, {
-//     resize: true,
-//     useWorker: true,
-//   })({ particleCount: 100, spread: 160 });
-// }
 
 // Check that service workers are supported
 if ('serviceWorker' in navigator) {
@@ -27,3 +14,20 @@ if ('serviceWorker' in navigator) {
   });
 }
 
+// Initialize Smooth scroll
+var scroll = new SmoothScroll('a[href*="#"]');
+
+// Contact form submission: https://docs.netlify.com/forms/setup/#submit-html-forms-with-ajax
+const handleSubmit = (e) => {
+  e.preventDefault();
+  let myForm = document.getElementById('contactForm');
+  let formData = new FormData(myForm);
+  fetch('/', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+    body: new URLSearchParams(formData).toString(),
+  })
+    .then(() => console.log('Form successfully submitted'))
+    .catch((error) => alert(error));
+};
+document.querySelector('form').addEventListener('submit', handleSubmit);
