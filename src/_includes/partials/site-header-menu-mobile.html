@@ -4,6 +4,7 @@
   x-state:off="Menu closed"
   :class="{ 'block': open, 'hidden': !open }"
   class="sm:hidden"
+  x-cloak
 >
   <ul class="pt-2 pb-3">
     {% for item in navigation.items %} {% if item.url == page.url %} {%
