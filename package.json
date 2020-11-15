@@ -1,6 +1,6 @@
 {
-  "name": "11st-starter-kit",
-  "description": "11ty, powered by Snowpack with Tailwind CSS and Alpine.js.",
+  "name": "eluent-translator",
+  "description": "Eluent Strength Translator",
   "version": "1.0.0",
   "engines": {
     "node": "12.x.x",
@@ -9,7 +9,7 @@
   "main": "index.js",
   "repository": {
     "type": "git",
-    "url": "git@github.com:stefanfrede/11st-starter-kit.git"
+    "url": "git@github.com:khoivan88/eluent-translator.git"
   },
   "keywords": [
     "alpinjs",
@@ -25,9 +25,9 @@
   "license": "MIT",
   "private": true,
   "bugs": {
-    "url": "https://github.com/stefanfrede/11st-starter-kit/issues"
+    "url": "https://github.com/khoivan88/eluent-translator/issues"
   },
-  "homepage": "https://11st-starter-kit.netlify.app",
+  "homepage": "https://eluenttranslator.netlify.app/",
   "browserslist": [
     "defaults",
     "maintained node versions",
