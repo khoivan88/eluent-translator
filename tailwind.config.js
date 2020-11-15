@@ -6,8 +6,7 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        sans: ['Inter var', ...defaultTheme.fontFamily.sans],
-        display: ['Cambria', 'serif'],
+        // sans: ['Inter var', ...defaultTheme.fontFamily.sans],
       },
       fontSize: {
         '7xl': '5rem',
@@ -27,7 +26,7 @@ module.exports = {
     inset: ['responsive', 'focus'],
   },
   plugins: [
-    require('@tailwindcss/typography'),
+    // require('@tailwindcss/typography'),
     require('@tailwindcss/custom-forms'),
   ],
 };
