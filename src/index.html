@@ -152,7 +152,7 @@ primaryCTA:
     </div>
 
   <div class="w-max-5xl bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative" role="alert"
-    x-show="solA_2.percentage > 100 || solA_2.percentage < 0">
+    x-show="solA_2.percentage > 100 || solA_2.percentage < 0" x-cloak>
     Change the solvent compositions or ratio to get the percentage into 0-100 range.
   </div>
 </div>
@@ -817,11 +817,6 @@ primaryCTA:
       init() {
         this.solA_1.solvent = this.solvents.find((solvent) => solvent.name === 'hexane');
         this.solB_1.solvent = this.solvents.find((solvent) => solvent.name === 'ethyl acetate');
-        //this.solA_1.solvent = this.solvents[0]
-        //this.solB_1.solvent = this.solvents[0]
-        //this.solA_1.percentage = 100;
-        //this.solB_1.percentage = 100 - this.solA_1.percentage;
-
         this.solA_2.solvent = this.solvents.find((solvent) => solvent.name === 'hexane');
         this.solB_2.solvent = this.solvents.find((solvent) => solvent.name === 'ethyl acetate');
       },
