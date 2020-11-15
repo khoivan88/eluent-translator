@@ -751,32 +751,39 @@ primaryCTA:
         <label>Don’t fill this out if you're human: <input name="bot-field" /></label>
       </p>
       <div>
-        <span class="uppercase text-sm text-gray-600 font-bold">Name</span>
-        <input class="w-full bg-gray-300 text-gray-900 mt-2 p-3 rounded-lg focus:outline-none focus:shadow-outline"
-          type="text" placeholder="Name" name="name" required>
+        <label class="uppercase text-sm text-gray-700 font-bold">Name *
+          <input class="w-full bg-gray-300 text-gray-900 mt-2 p-3 rounded-lg focus:outline-none focus:shadow-outline"
+            type="text" placeholder="Name" name="name" required>
+        </label>
       </div>
       <div class="mt-8">
-        <span class="uppercase text-sm text-gray-600 font-bold">Email</span>
-        <input class="w-full bg-gray-300 text-gray-900 mt-2 p-3 rounded-lg focus:outline-none focus:shadow-outline"
-          type="email" name="email" placeholder="Email" required>
+        <label class="uppercase text-gray-700 font-bold">Email *
+          <input class="w-full bg-gray-300 text-gray-900 mt-2 p-3 rounded-lg focus:outline-none focus:shadow-outline"
+            type="email" name="email" placeholder="Email" required>
+        </label>
       </div>
       <div class="mt-8">
-        <span class="uppercase text-sm text-gray-600 font-bold">Message</span>
-        <textarea
-          class="w-full h-32 bg-gray-300 text-gray-900 mt-2 p-3 rounded-lg focus:outline-none focus:shadow-outline"
-          name="message" placeholder="Message" required></textarea>
+        <label class="uppercase text-gray-700 font-bold">Message *
+          <textarea
+            class="w-full h-32 bg-gray-300 text-gray-900 mt-2 p-3 rounded-lg focus:outline-none focus:shadow-outline"
+            name="message" placeholder="Message" required></textarea>
+        </label>
       </div>
       <div class="mt-8">
-        <span class="uppercase text-sm text-gray-600 font-bold">Attach file (optional)</span>
-        <input class="w-full bg-gray-300 text-gray-900 mt-2 p-3 rounded-lg focus:outline-none focus:shadow-outline"
-          type="file" name="file">
+        <label class="uppercase text-gray-700 font-bold">Attach file (optional)
+          <p class="normal-case font-normal text-sm">(Large file might take a while for the form submission)</p>
+          <input class="w-full bg-gray-300 text-gray-900 mt-2 p-3 rounded-lg focus:outline-none focus:shadow-outline"
+            type="file" name="file">
+        </label>
       </div>
       <div class="mt-8">
         <button type="submit"
-          class="uppercase text-sm font-bold tracking-wide bg-indigo-500 text-gray-100 p-3 rounded-lg w-full focus:outline-none focus:shadow-outline">
+          class="uppercase text-xl font-bold tracking-wide bg-blue-800 hover:bg-blue-600 text-white p-3 rounded-lg w-full focus:outline-none focus:shadow-outline">
           Send Message
         </button>
       </div>
+      <div class="mt-8">(* Required fields)</div>
+
     </form>
   </div>
 </section>
