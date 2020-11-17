@@ -1,0 +1,13 @@
+<script>
+    // We need to exclude window.MSStream as Microsoft injected the word iPhone in IE11’s userAgent in order to try and fool Gmail.
+    // Ref: https://racase.com.np/javascript-how-to-detect-if-device-is-ios/
+    // https://stackoverflow.com/a/50035797/6596203
+    var isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
+    if (isIOS) {
+        let full_release_numeric = (navigator.userAgent).match(/OS (\d)?\d_\d(_\d)?/i)[0].replace("_",".").replace("_","").replace("OS ","");   //converts versions like 4.3.3 to numeric value 4.33 for ease of numeric comparisons
+        if (full_release_numeric < 13) {
+            // console.log(`This is a IOS device, version ${full_release_numeric}`);
+            window.alert(`We have detected your browser as an iOS device, version ${full_release_numeric}.\n This website navigation does not work well with this browser, please use iOS 13+`);
+        };
+    };
+</script>
