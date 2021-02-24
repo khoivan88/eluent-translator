@@ -1,6 +1,6 @@
 {
   "name": "Eluent Strength Translator",
-  "short_name": "eluent-translator",
+  "short_name": "Eluent Translator",
   "scope": "/",
   "start_url": "/",
   "display": "standalone",
