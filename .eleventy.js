@@ -8,7 +8,7 @@ module.exports = function (config) {
   // Static assets to pass through
   config.addPassthroughCopy('./src/fonts');
   config.addPassthroughCopy('./src/images');
-  config.addPassthroughCopy('./src/styles');
+  // config.addPassthroughCopy('./src/styles');
   config.addPassthroughCopy('./src/favicon.ico');
   config.addPassthroughCopy('./src/manifest.json');
   config.addPassthroughCopy('./src/robots.txt');
@@ -31,7 +31,7 @@ module.exports = function (config) {
   return {
     dir: {
       input: 'src',
-      output: 'build',
+      output: 'src/_site',
     },
     passthroughFileCopy: true,
     templateFormats: ['html', 'md', 'liquid'],

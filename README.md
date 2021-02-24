@@ -7,7 +7,7 @@
 with [Tailwind CSS](https://tailwindcss.com) and
 [Alpine.js](https://github.com/alpinejs/alpine/).
 
-This is the source code for the Eluent Strength Translator webpage by Khoi Van.
+This is the source code for the [Eluent Strength Translator webpage](https://eluenttranslator.netlify.app/) by Khoi Van.
 
 ## License
 

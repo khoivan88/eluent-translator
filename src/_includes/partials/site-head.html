@@ -51,21 +51,23 @@
 <link rel="icon" type="image/png" sizes="16x16" href="/images/icons/favicon-16x16.png">
 <link rel="manifest" href="/manifest.json" />
 
-<!-- <link rel="preload" href="https://rsms.me/inter/inter.css" as="style" /> -->
+<!-- Preconnect to the font file origin -->
+<link rel="preconnect" href="https://rsms.me" crossorigin />
+
+<!-- Preload the font stylesheet asynchronously with low priority -->
+<link rel="preload" href="https://rsms.me/inter/inter.css" as="style" crossorigin="anonymous" />
 
 <!-- https://www.filamentgroup.com/lab/load-css-simpler/ -->
-<!-- <link
-  rel="stylesheet"
-  href="https://rsms.me/inter/inter.css"
-  media="print"
-  onload="this.media='all'; this.onload=null;"
-/> -->
+<link crossorigin="anonymous" rel="stylesheet" href="https://rsms.me/inter/inter.css" media="print"
+  onload="this.media='all'; this.onload=null;" />
 
-<link rel="stylesheet" href="/styles/index.css?{{ nanoid }}" />
+<link rel="stylesheet" href="/styles/index.css" />
 
+{% comment %}
 <!-- iOS less than 13 does not work with minified JS by snowpack-optimize plugin,
     Give window alert in this case -->
 {% include 'partials/detect_ios.njk' %}
+{% endcomment %}
 
 <!-- Pre-connect to google analytic to speed up, ref: https://bryanlrobinson.com/blog/climbing-the-11ty-performance-leaderboard/ -->
 <link rel="preconnect" href="https://www.googletagmanager.com">

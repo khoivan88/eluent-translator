@@ -6,6 +6,8 @@ web_modules
 .build
 build
 dist
+src/_site
+.snowpack
 
 # secrets
 .env

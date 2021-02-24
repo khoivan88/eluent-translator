@@ -3,7 +3,7 @@
   "description": "Eluent Strength Translator",
   "version": "1.0.0",
   "engines": {
-    "node": "12.x.x",
+    "node": "14.x.x",
     "npm": "6.x.x"
   },
   "main": "index.js",
@@ -19,8 +19,8 @@
     "tailwindcss"
   ],
   "author": {
-    "name": "Stefan Frede",
-    "email": "stefan@frede.dev"
+    "name": "Khoi Van",
+    "email": "33493502+khoivan88@users.noreply.github.com"
   },
   "license": "MIT",
   "private": true,
@@ -33,25 +33,19 @@
     "maintained node versions",
     "> 5%"
   ],
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged",
-      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
-    }
-  },
   "lint-staged": {
     "*.{css,js,html}": "stylelint --fix",
     "*.{js,html}": "eslint --fix"
   },
   "sideEffects": false,
   "scripts": {
-    "clean": "rimraf build",
-    "lighthouse": "lighthouse http://localhost:8080 --output=html --output-path=./report.html --view",
+    "clean": "rimraf src/_site",
     "serve": "serve --no-clipboard --listen 8080 dist",
-    "dev": "run-s clean dev:*",
+    "dev": "cross-env NODE_ENV=development run-s clean dev:*",
     "dev:snowpack": "snowpack dev",
-    "build": "run-s clean build:*",
+    "build": "cross-env NODE_ENV=production run-s clean build:*",
     "build:snowpack": "snowpack build",
+    "build:sw": "workbox generateSW",
     "lint": "run-s lint:*",
     "lint:eslint": "eslint --ext .js --ext .html src/",
     "lint:stylelint": "stylelint src/**/*.js src/**/*.html src/**/*.css",
@@ -62,45 +56,44 @@
     "setup": "npm install && npm run validate"
   },
   "devDependencies": {
-    "@commitlint/cli": "^11.0.0",
-    "@commitlint/config-conventional": "^11.0.0",
-    "@tailwindcss/custom-forms": "^0.2.1",
+    "@commitlint/cli": "^12.0.0",
+    "@commitlint/config-conventional": "^12.0.0",
+    "@tailwindcss/forms": "^0.2.1",
     "babel-eslint": "^10.1.0",
-    "browserslist": "^4.14.6",
-    "core-js": "^3.7.0",
-    "eslint": "^7.13.0",
-    "eslint-config-prettier": "^6.15.0",
-    "eslint-plugin-html": "^6.1.0",
+    "browserslist": "^4.16.3",
+    "core-js": "^3.9.0",
+    "cross-env": "^7.0.3",
+    "eslint": "^7.20.0",
+    "eslint-config-prettier": "^8.0.0",
+    "eslint-plugin-html": "^6.1.1",
     "eslint-plugin-import": "^2.22.1",
-    "eslint-plugin-prettier": "^3.1.4",
-    "husky": "^4.3.0",
-    "lighthouse": "^6.4.1",
-    "lint-staged": "^10.5.1",
-    "prettier": "^2.1.2",
+    "eslint-plugin-prettier": "^3.3.1",
+    "lint-staged": "^10.5.4",
+    "prettier": "^2.2.1",
     "serve": "^11.3.2",
     "smooth-scroll": "^16.1.3",
-    "stylelint": "^13.7.2",
+    "stylelint": "^13.11.0",
     "stylelint-config-prettier": "^8.0.2",
     "stylelint-config-standard": "^20.0.0",
-    "stylelint-order": "^4.1.0"
+    "stylelint-order": "^4.1.0",
+    "workbox-cli": "^6.1.1"
   },
   "dependencies": {
     "@11ty/eleventy": "^0.11.1",
-    "@babel/core": "^7.11.6",
-    "@babel/preset-env": "^7.11.5",
-    "@snowpack/plugin-build-script": "^2.0.11",
-    "@snowpack/plugin-optimize": "^0.2.8",
-    "@snowpack/plugin-postcss": "^1.0.7",
-    "@snowpack/plugin-run-script": "^2.2.0",
-    "alpinejs": "^2.7.3",
-    "autoprefixer": "^10.0.1",
-    "nanoid": "^3.1.16",
+    "@babel/core": "^7.13.1",
+    "@babel/preset-env": "^7.13.5",
+    "@snowpack/plugin-build-script": "^2.1.0",
+    "@snowpack/plugin-optimize": "^0.2.13",
+    "@snowpack/plugin-postcss": "^1.1.0",
+    "@snowpack/plugin-run-script": "^2.3.0",
+    "alpinejs": "^2.8.1",
+    "autoprefixer": "^10.2.4",
+    "nanoid": "^3.1.20",
     "npm-run-all": "^4.1.5",
-    "postcss": "^8.1.6",
-    "postcss-100vh-fix": "^1.0.2",
-    "postcss-cli": "^8.2.0",
+    "postcss": "^8.2.6",
+    "postcss-cli": "^8.3.1",
     "rimraf": "^3.0.2",
-    "snowpack": "^2.17.0",
-    "tailwindcss": "^1.9.6"
+    "snowpack": "^3.0.13",
+    "tailwindcss": "^2.0.3"
   }
 }
