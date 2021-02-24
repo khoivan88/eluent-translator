@@ -20,7 +20,7 @@ primaryCTA:
 ---
 <h3 class="text-lg md:text-xl font-black uppercase mx-4 md:mx-10 mt-8 mb-4">Guide</h3>
 <p class="text-base text-gray-700 leading-8 mb-8 mx-4 md:mx-10">
-  The list of solvents is sorted in increasing order of eluent strength on neutral silica gel.
+  Currently, there are {{ solvents.size }} solvents, sorted in increasing order of eluent strength on neutral silica gel.
   The eluent strengths are currently extracted from Louisiana State University Macro server at
   The Polymer Analysis Laboratory (PAL) <a class="underline"
   href="https://macro.lsu.edu/howto/solvents/Summary%20of%20Key%20Physical%20data%20for%20Baker%20Analyzed%20HPLC%20Solvents.htm"
@@ -803,30 +803,7 @@ primaryCTA:
 <script>
   function getSolvents() {
     return {
-      solvents: [
-        { name: 'hexane', eluoValue: 0.01 },
-        { name: 'heptane', eluoValue: 0.01 },
-        { name: '2,2-4-Trimethylpentane', eluoValue: 0.01 },
-        { name: '1,1,2-trichloro-1,2,2-trifluoroethane', eluoValue: 0.02 },
-        { name: 'cyclohexane', eluoValue: 0.03 },
-        { name: 'toluene', eluoValue: 0.22 },
-        { name: 'chloroform (hydrocarbon stabilized)', eluoValue: 0.26 },
-        { name: 'diethyl ether', eluoValue: 0.29 },
-        { name: 'methyl t-butyl ether', eluoValue: 0.29 },
-        { name: 'chloroform', eluoValue: 0.31 },
-        { name: 'dichloromethane', eluoValue: 0.32 },
-        { name: 'tetrahydrofuran', eluoValue: 0.35 },
-        { name: 'methyl ethyl ketone', eluoValue: 0.39 },
-        { name: 'acetone', eluoValue: 0.43 },
-        { name: 'ethyl acetate', eluoValue: 0.45 },
-        { name: 'acetonitrile', eluoValue: 0.50 },
-        { name: 'isobutanol', eluoValue: 0.54 },
-        { name: 'pyridine', eluoValue: 0.55 },
-        { name: '2-propanol', eluoValue: 0.63 },
-        { name: 'ethanol', eluoValue: 0.65 },
-        { name: 'methanol', eluoValue: 0.73 },
-        { name: 'water', eluoValue: 1.00 },
-      ],
+      solvents: {{ solvents }},
       solA_1: {},
       solB_1: {},
       solA_2: {},
