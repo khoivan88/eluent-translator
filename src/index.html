@@ -36,7 +36,7 @@ primaryCTA:
   <div class="flex flex-wrap mr-2 md:mb-8">
     <div class="my-1 md:my-4 w-5/6 md:w-1/3 flex flex-row">
       <label class="mt-4 mr-2 text-right" for="solA_1">Solvent A:</label>
-      <select id="solA_1" class="form-select mt-1 w-2/3"
+      <select id="solA_1" class="block rounded-md bg-gray-300 border-transparent focus:border-gray-500 focus:bg-white focus:ring-0 mt-1 w-2/3"
         @change="solA_1.solvent = lookup($event.target.value); translate()">
         <template x-for="solvent in solvents" :key="solvent.name">
           <option x-bind:value="solvent.name" x-text="solvent.name"
@@ -47,7 +47,7 @@ primaryCTA:
     <div class="w-1/6 md:w-1/3 text-center self-center" x-text="solA_1.solvent.eluoValue"></div>
     <div class="mb-1 md:mb-4 w-full md:w-1/3 flex flex-row">
       <label class="md:mt-4 mx-3 text-right">Percentage:
-        <input type="number" min="0" max="100" class="form-input w-auto"
+        <input type="number" min="0" max="100" class="rounded-md bg-gray-300 border-transparent focus:border-gray-500 focus:bg-white focus:ring-0 w-auto"
           x-model="solA_1.percentage" x-on:change="solB_1.percentage = (100 - solA_1.percentage); translate()">
         %
       </label>
@@ -55,7 +55,7 @@ primaryCTA:
 
     <div class="my-1 md:my-4 w-5/6 md:w-1/3 flex flex-row">
       <label class="mt-4 mr-2 text-right" for="solB_1" >Solvent B:</label>
-      <select id="solB_1" class="form-select mt-1 w-2/3"
+      <select id="solB_1" class="block rounded-md bg-gray-300 border-transparent focus:border-gray-500 focus:bg-white focus:ring-0 mt-1 w-2/3"
         @change="solB_1.solvent = lookup($event.target.value); translate()">
         <template x-for="solvent in solvents" :key="solvent.name">
           <option x-bind:value="solvent.name" x-text="solvent.name"
@@ -66,7 +66,7 @@ primaryCTA:
     <div class="w-1/6 md:w-1/3 text-center self-center" x-text="solB_1.solvent.eluoValue"></div>
     <div class="mb-1 md:mb-4 w-full md:w-1/3 flex flex-row">
       <label class="md:mt-4 mx-3 text-right">Percentage:
-        <input type="number" min="0" max="100" class="form-input w-auto"
+        <input type="number" min="0" max="100" class="rounded-md bg-gray-300 border-transparent focus:border-gray-500 focus:bg-white focus:ring-0 w-auto"
           x-model="solB_1.percentage" x-on:change="solA_1.percentage = (100 - solB_1.percentage); translate()">
         %
       </label>
@@ -130,7 +130,7 @@ primaryCTA:
   <div class="flex flex-wrap mr-2 md:mb-8">
     <div class="my-1 md:my-4 w-5/6 md:w-1/3 flex flex-row">
       <label class="mt-4 mr-2 text-right" for="solA_2" >Solvent A:</label>
-      <select id="solA_2" class="form-select mt-1 w-2/3"
+      <select id="solA_2" class="block rounded-md bg-gray-300 border-transparent focus:border-gray-500 focus:bg-white focus:ring-0 mt-1 w-2/3"
         @change="solA_2.solvent = lookup($event.target.value); translate()">
         <template x-for="solvent in solvents" :key="solvent.name">
           <option x-bind:value="solvent.name" x-text="solvent.name"
@@ -147,7 +147,7 @@ primaryCTA:
 
     <div class="my-1 md:my-4 w-5/6 md:w-1/3 flex flex-row">
       <label class="mt-4 mr-2 text-right" for="solB_2">Solvent B:</label>
-      <select id="solB_2" class="form-select mt-1 w-2/3"
+      <select id="solB_2" class="block rounded-md bg-gray-300 border-transparent focus:border-gray-500 focus:bg-white focus:ring-0 mt-1 w-2/3"
         @change="solB_2.solvent = lookup($event.target.value); translate()">
         <template x-for="solvent in solvents" :key="solvent.name">
           <option x-bind:value="solvent.name" x-text="solvent.name"
@@ -161,7 +161,7 @@ primaryCTA:
       <div class="md:mt-4 inline-block text-red-700 mx-3 font-bold animate-bounce" x-text="solB_2.percentage"></div>
       <span class="md:mt-4">%</span>
     </div>
-    </div>
+  </div>
 
   <div class="w-max-5xl bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative" role="alert"
     x-show="solA_2.percentage > 100 || solA_2.percentage < 0" x-cloak>
