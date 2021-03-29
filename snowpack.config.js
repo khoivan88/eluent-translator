@@ -25,14 +25,14 @@ module.exports = {
   ],
   packageOptions: {
     NODE_ENV: true,
-    source: 'remote',
+    // source: 'remote',
   },
   buildOptions: {
     clean: true,
     out: 'dist',
   },
   devOptions: {
-    // "hmrDelay": 1000,
+    hmrDelay: 1000,
     open: 'none',
   },
   // optimize: {
