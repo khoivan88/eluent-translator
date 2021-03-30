@@ -19,7 +19,7 @@
 [[headers]]
   for = "/*"
   [headers.values]
-    Content-Security-Policy-Report-Only = "default-src 'none'; form-action 'none'; frame-ancestors 'none';"
+    Content-Security-Policy-Report-Only = "default-src 'self' https://rsms.me https://api.netlify.com https://fonts.gstatic.com; frame-ancestors 'none'; style-src 'self' https://rsms.me https://fonts.googleapis.com 'unsafe-inline'; script-src 'self' https://www.googletagmanager.com 'unsafe-eval' 'unsafe-inline'; worker-src 'self' blob:; img-src 'self' https://d33wubrfki0l68.cloudfront.net data:; connect-src 'self' https://www.google-analytics.com https://rsms.me;"
 #    Content-Security-Policy = "default-src 'self' https://rsms.me https://api.netlify.com; style-src 'self' https://rsms.me 'unsafe-inline'; script-src 'self' 'unsafe-eval' 'unsafe-inline'; worker-src 'self' blob:;"
     # X-Content-Type-Options = "nosniff"
     # X-Frame-Options = "DENY"
