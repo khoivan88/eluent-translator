@@ -12,7 +12,7 @@ module.exports = {
       '@snowpack/plugin-run-script',
       {
         cmd: 'eleventy',
-        watch: '$1 --watch --quiet',
+        watch: '$1 --watch',
       },
     ],
     [
