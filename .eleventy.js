@@ -1,20 +1,23 @@
 const fs = require('fs');
+const svgContents = require('eleventy-plugin-svg-contents');  // https://github.com/brob/eleventy-plugin-svg-contents
 
-module.exports = function (config) {
-  config.setLiquidOptions({
+module.exports = function (eleventyConfig) {
+  eleventyConfig.setLiquidOptions({
     dynamicPartials: true,
   });
 
+  eleventyConfig.addPlugin(svgContents);
+
   // Static assets to pass through
-  config.addPassthroughCopy('./src/fonts');
-  config.addPassthroughCopy('./src/images');
-  // config.addPassthroughCopy('./src/styles');
-  config.addPassthroughCopy('./src/favicon.ico');
-  config.addPassthroughCopy('./src/manifest.json');
-  config.addPassthroughCopy('./src/robots.txt');
+  eleventyConfig.addPassthroughCopy('./src/fonts');
+  eleventyConfig.addPassthroughCopy('./src/images');
+  // eleventyConfig.addPassthroughCopy('./src/styles');
+  eleventyConfig.addPassthroughCopy('./src/favicon.ico');
+  eleventyConfig.addPassthroughCopy('./src/manifest.json');
+  eleventyConfig.addPassthroughCopy('./src/robots.txt');
 
   // 404
-  config.setBrowserSyncConfig({
+  eleventyConfig.setBrowserSyncConfig({
     callbacks: {
       ready: function (err, browserSync) {
         const content_404 = fs.readFileSync('dist/404.html');
