@@ -11,6 +11,10 @@ This is the source code for the [Eluent Strength Translator webpage](https://elu
 
 ## Changelog
 
+### 2021-03-31
+
+- Add button to quickly scroll back to top
+
 ### 2021-02-25
 
 - Include 22 solvents, sorted in increasing order of eluent strength.
