@@ -9,6 +9,12 @@ with [Tailwind CSS](https://tailwindcss.com) and
 
 This is the source code for the [Eluent Strength Translator webpage](https://eluenttranslator.netlify.app/) by Khoi Van.
 
+## Changelog
+
+### 2021-02-25
+
+- Include 22 solvents, sorted in increasing order of eluent strength.
+
 ## License
 
 This project is open source and available under the [MIT License](LICENSE).
